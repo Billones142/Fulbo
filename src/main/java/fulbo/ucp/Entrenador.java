@@ -18,20 +18,18 @@ public class Entrenador
 
 
     public Entrenador( String pNom, String pApe, int pH, double pSB, String pNacio){
-        
-        this.setNombre(pNom);
+        super(pNom, pApe, pH, pSB);
 
     }
 
     public Entrenador( String pNom, String pApe, double pSB, String pNacio){
-        
-
+        super(pNom,pApe,pSB);
     }
 
-    public double sueldoNeto(){
+    public double sueldoNeto(){//TODO
         
         
-        return ; //TODO
+        return 0.1;
         
     }
 
@@ -43,6 +41,6 @@ public class Entrenador
 
     public String rolEntrenamiento(){ //TODO
     
-        return String;
+        return "";
     }
 }

@@ -63,11 +63,11 @@ abstract class IntegranteSeleccion {
     }
 
     protected double aportes(){ //TODO
-        
+        return 0.1;
     }
 
     public double sueldoNeto(){ //TODO
-        
+        return 0.1;
     }
 
     protected String apeYnom(){ //TODO
