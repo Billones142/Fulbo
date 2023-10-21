@@ -25,7 +25,7 @@ public class Masajista extends IntegranteSeleccion{
         return "";
     }
 
-    public void mostrarDatos() { //TODO
-        
+    public String mostrarDatos() { //TODO
+        return "";
     }
 }

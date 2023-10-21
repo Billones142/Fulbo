@@ -7,7 +7,7 @@ import fulbo.ucp.*;
 
 public class IntegranteSeleccionTest {
     @Test
-    public void sueldoJugadorTest() {// TODO
+    public void sueldoJugadorTest() {
         Jugador messi= new Jugador("Leo", "Messsi", 3, 200000, "Delantero", true);
 
         assertEquals(260000, (int)messi.sueldoNeto());

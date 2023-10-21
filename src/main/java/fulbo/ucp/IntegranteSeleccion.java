@@ -66,15 +66,15 @@ abstract class IntegranteSeleccion {
         return getSueldoBasico() * 0.925;
     }
 
-    public double sueldoNeto(){ //TODO
+    public double sueldoNeto(){
         return adicionalHijos() + aportes();
     }
 
     protected String apeYnom(){
-        return getApellido()+ " " + getNombre();
+        return getApellido()+ " ," + getNombre();
     }
 
-    public void mostrarDatos(){ //TODO
-        
+    public String mostrarDatos(){
+        return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"");
     }
 }

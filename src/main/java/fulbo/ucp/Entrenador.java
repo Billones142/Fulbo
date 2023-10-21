@@ -25,14 +25,14 @@ public class Entrenador
 
     /*********************Fin De Encapsulacion*********************/
 
-    public double sueldoNeto(){//TODO
+    public double sueldoNeto(){
         return aportes() + adicionalHijos();
     }
 
 
     
-    public void mostrarDatos(){ //TODO
-        
+    public String mostrarDatos(){ //TODO
+        return "";
     }
 
     public String rolEntrenamiento(){ //TODO

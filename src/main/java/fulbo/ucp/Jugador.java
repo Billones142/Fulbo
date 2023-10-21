@@ -38,11 +38,12 @@ public class Jugador extends IntegranteSeleccion{
         return "";
     }
 
-    public double sueldoNeto() { //TODO
+    public double sueldoNeto() {
         return aportes() + (getPremio()?getSueldoBasico()*0.3:0) + adicionalHijos();
     }
 
-    public void mostrarDatos() { //TODO
-        
+    public String mostrarDatos() { //TODO
+        return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
+        " - Jugador - " + getPosicionTactica() + (getPremio()?"  (Premio habilitado)":"");
     }
 }
