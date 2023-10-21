@@ -17,10 +17,10 @@ abstract class IntegranteSeleccion {
         setHijos(0);
     }
     
-    String nombre;
-    String apellido;
-    int hijos;
-    double sueldoBasico;
+    private String nombre;
+    private String apellido;
+    private int hijos;
+    private double sueldoBasico;
 
     /*********************Inicio De Encapsulacion*********************/
     protected void setApellido(String apellido) {
@@ -62,15 +62,15 @@ abstract class IntegranteSeleccion {
         return getHijos()*5000;
     }
 
-    protected double aportes(){ //TODO
-        return 0.1;
+    protected double aportes(){
+        return getSueldoBasico() * 0.925;
     }
 
     public double sueldoNeto(){ //TODO
-        return 0.1;
+        return adicionalHijos() + aportes();
     }
 
-    protected String apeYnom(){ //TODO
+    protected String apeYnom(){
         return getApellido()+ " " + getNombre();
     }
 

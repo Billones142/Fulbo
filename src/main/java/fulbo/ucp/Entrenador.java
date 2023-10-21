@@ -2,8 +2,17 @@ package fulbo.ucp;
 
 public class Entrenador 
     extends IntegranteSeleccion{
+    public Entrenador( String pNom, String pApe, int pH, double pSB, String pNacio){
+        super(pNom, pApe, pH, pSB);
+        setNacionalidad(pNacio);
+    }
 
-    private String nacionalidad="";//TODO: CREAR GETTER Y SETTER
+    public Entrenador( String pNom, String pApe, double pSB, String pNacio){
+        super(pNom,pApe,pSB);
+        setNacionalidad(pNacio);
+    }
+
+    private String nacionalidad;
 
     /*********************Inicio De Encapsulacion*********************/
     public String getNacionalidad() {
@@ -16,21 +25,8 @@ public class Entrenador
 
     /*********************Fin De Encapsulacion*********************/
 
-
-    public Entrenador( String pNom, String pApe, int pH, double pSB, String pNacio){
-        super(pNom, pApe, pH, pSB);
-
-    }
-
-    public Entrenador( String pNom, String pApe, double pSB, String pNacio){
-        super(pNom,pApe,pSB);
-    }
-
     public double sueldoNeto(){//TODO
-        
-        
-        return 0.1;
-        
+        return aportes() + adicionalHijos();
     }
 
 
@@ -40,7 +36,6 @@ public class Entrenador
     }
 
     public String rolEntrenamiento(){ //TODO
-    
         return "";
     }
 }
