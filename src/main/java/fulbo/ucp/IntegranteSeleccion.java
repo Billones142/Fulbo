@@ -71,7 +71,7 @@ abstract class IntegranteSeleccion {
     }
 
     protected String apeYnom(){
-        return getApellido()+ " ," + getNombre();
+        return getApellido()+ ", " + getNombre();
     }
 
     public String mostrarDatos(){

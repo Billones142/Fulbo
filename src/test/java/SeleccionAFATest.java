@@ -8,19 +8,20 @@ import fulbo.ucp.SeleccionAFA;
 
 public class SeleccionAFATest {
     @Test
-    public void nominaJugadorConPremioTest() {// TODO
+    public void nominaJugadorConPremioTest() {
         SeleccionAFA seleccionAFA= new SeleccionAFA("Escaloni");
         Jugador messi= new Jugador("Lionel", "Messi", 3, 200000, "Delantero", true);
         seleccionAFA.agregarIntegrante(messi);
 
-        String nomina= "--------------------------------------------------------------------------------------\n" + //
-                "Resumen de sueldos a pagar:\n" + //
-                "--------------------------------------------------------------------------------------\n" + //
-                "Messi, Lionel - Sueldo Básico: $200000.0 - Hijos: 3 - Jugador - Delantero (Premio habilitado)\n" + //
-                "Sueldo Neto: $260000.0\n" + //
-                "--------------------------------------------------------------------------------------\n" + //
-                "Monto total a pagar en concepto de sueldos: $ 260000.0\n" + //
+        String nomina= "--------------------------------------------------------------------------------------\r\n" + //
+                "Resumen de sueldos a pagar:\r\n" + //
+                "--------------------------------------------------------------------------------------\r\n" + //
+                "Messi, Lionel - Sueldo Básico: $200000.0 - Hijos: 3 - Jugador - Delantero (Premio habilitado)\r\n" + //
+                "Sueldo Neto: $260000.0\r\n" + //
+                "--------------------------------------------------------------------------------------\r\n" + //
+                "Monto total a pagar en concepto de sueldos: $ 260000.0\r\n" + //
                 "--------------------------------------------------------------------------------------";
+
         String nominaCreada= seleccionAFA.mostrarNomina();
 
         assertEquals(nomina, nominaCreada);
@@ -32,14 +33,15 @@ public class SeleccionAFATest {
         Jugador dybala= new Jugador("Paulo", "Dybala", 120000, "Delantero", false);
         seleccionAFA.agregarIntegrante(dybala);
 
-        String nomina= "--------------------------------------------------------------------------------------\n" + //
-                "Resumen de sueldos a pagar:\n" + //
-                "--------------------------------------------------------------------------------------\n" + //
-                "Dybala, Paulo - Sueldo Básico: $120000.0 - Jugador - Delantero\n" + //
-                "Sueldo Neto: $74000.0\n" + //
-                "--------------------------------------------------------------------------------------\n" + //
-                "Monto total a pagar en concepto de sueldos: $ 74000.0\n" + //
+        String nomina= "--------------------------------------------------------------------------------------\r\n" + //
+                "Resumen de sueldos a pagar:\r\n" + //
+                "--------------------------------------------------------------------------------------\r\n" + //
+                "Dybala, Paulo - Sueldo Básico: $120000.0 - Jugador - Delantero\r\n" + //
+                "Sueldo Neto: $74000.0\r\n" + //
+                "--------------------------------------------------------------------------------------\r\n" + //
+                "Monto total a pagar en concepto de sueldos: $ 74000.0\r\n" + //
                 "--------------------------------------------------------------------------------------";
+
         String nominaCreada= seleccionAFA.mostrarNomina();
 
         assertEquals(nomina, nominaCreada);

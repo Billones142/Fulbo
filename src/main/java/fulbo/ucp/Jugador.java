@@ -42,8 +42,8 @@ public class Jugador extends IntegranteSeleccion{
         return aportes() + (getPremio()?getSueldoBasico()*0.3:0) + adicionalHijos();
     }
 
-    public String mostrarDatos() { //TODO
+    public String mostrarDatos() {
         return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
-        " - Jugador - " + getPosicionTactica() + (getPremio()?"  (Premio habilitado)":"");
+        " - Jugador - " + getPosicionTactica() + (getPremio()?" (Premio habilitado)":"") + "\r\n";
     }
 }

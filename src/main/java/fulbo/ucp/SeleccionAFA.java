@@ -50,7 +50,7 @@ public class SeleccionAFA {
         
     }
 
-    public String mostrarNomina() { //TODO
+    public String mostrarNomina() {
         StringBuilder nominacompleta= new StringBuilder("");
         double montoTotal= 0;
 
@@ -60,14 +60,15 @@ public class SeleccionAFA {
 
         for (int i = 0; i < getSeleccionado().size(); i++) {
             IntegranteSeleccion integrante= getSeleccionado().get(i);
-            nominacompleta.append(
+            /*nominacompleta.append(
             integrante.getApellido()+ ", " + integrante.getNombre() + " - Sueldo Básico: $" +
             integrante.getSueldoBasico() + (integrante.getHijos() > 0? " - Hijos: " + integrante.getHijos() : ""));
+            
 
             if (integrante instanceof Jugador) {
                 Jugador jugador= (Jugador)integrante;
                 nominacompleta.append(" - Jugador - " + jugador.getPosicionTactica() + 
-                (jugador.getPremio()? " (Premio habilitado)" : "") + "\n");
+                (jugador.getPremio()? " (Premio habilitado)" : "") + "\r\n");
             }else
 
             if (integrante instanceof Entrenador) {
@@ -77,8 +78,9 @@ public class SeleccionAFA {
 
             if (integrante instanceof Masajista) {
                 Masajista masajista= (Masajista)integrante;
-                nominacompleta.append("Masajista" + " - Titulación: " + masajista.getTitulacion());
-            }
+                nominacompleta.append("Masajista" + " - Titulación: " + masajista.getTitulacion());*/
+            nominacompleta.append(integrante.mostrarDatos());
+
 
             nominacompleta.append("Sueldo Neto: $" + integrante.sueldoNeto() + "\r\n");
             montoTotal+= integrante.sueldoNeto();
@@ -87,7 +89,7 @@ public class SeleccionAFA {
         nominacompleta.append("--------------------------------------------------------------------------------------\r\n" +
                 "Monto total a pagar en concepto de sueldos: $ " + montoTotal + "\r\n" +
                 "--------------------------------------------------------------------------------------");
-        
+
         return nominacompleta.toString();
     }
 }
