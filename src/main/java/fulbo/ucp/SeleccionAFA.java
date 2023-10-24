@@ -42,54 +42,66 @@ public class SeleccionAFA {
         }
     }
 
-    public void liquidarSueldos() { //TODO
-        
-    }
-    
-    public void conocerRol(String pApellido) { //TODO
-        
-    }
-
-    public String mostrarNomina() {
-        StringBuilder nominacompleta= new StringBuilder("");
+    public String liquidarSueldos() {
+        StringBuilder sueldosCompletos= new StringBuilder("");
         double montoTotal= 0;
 
-        nominacompleta.append("--------------------------------------------------------------------------------------\r\n" + //
-                "Resumen de sueldos a pagar:\r\n" + //
-                "--------------------------------------------------------------------------------------\r\n");
+        sueldosCompletos.append("--------------------------------------------------------------------------------------\r\n" + //
+                            "Resumen de sueldos a pagar:\r\n" + //
+                            "--------------------------------------------------------------------------------------\r\n");
 
         for (int i = 0; i < getSeleccionado().size(); i++) {
             IntegranteSeleccion integrante= getSeleccionado().get(i);
-            /*nominacompleta.append(
-            integrante.getApellido()+ ", " + integrante.getNombre() + " - Sueldo Básico: $" +
-            integrante.getSueldoBasico() + (integrante.getHijos() > 0? " - Hijos: " + integrante.getHijos() : ""));
-            
 
-            if (integrante instanceof Jugador) {
-                Jugador jugador= (Jugador)integrante;
-                nominacompleta.append(" - Jugador - " + jugador.getPosicionTactica() + 
-                (jugador.getPremio()? " (Premio habilitado)" : "") + "\r\n");
-            }else
+            sueldosCompletos.append(integrante.mostrarDatos());
 
-            if (integrante instanceof Entrenador) {
-                Entrenador entrenador= (Entrenador)integrante;
-                nominacompleta.append("Entrenador - Nacionalidad: " + entrenador.getNacionalidad());
-            }else
-
-            if (integrante instanceof Masajista) {
-                Masajista masajista= (Masajista)integrante;
-                nominacompleta.append("Masajista" + " - Titulación: " + masajista.getTitulacion());*/
-            nominacompleta.append(integrante.mostrarDatos());
-
-
-            nominacompleta.append("Sueldo Neto: $" + integrante.sueldoNeto() + "\r\n");
+            sueldosCompletos.append("Sueldo Neto: $" + integrante.sueldoNeto() + "\r\n");
             montoTotal+= integrante.sueldoNeto();
         }
 
-        nominacompleta.append("--------------------------------------------------------------------------------------\r\n" +
-                "Monto total a pagar en concepto de sueldos: $ " + montoTotal + "\r\n" +
-                "--------------------------------------------------------------------------------------");
+        sueldosCompletos.append("--------------------------------------------------------------------------------------\r\n" +
+                            "Monto total a pagar en concepto de sueldos: $ " + montoTotal + "\r\n" +
+                            "--------------------------------------------------------------------------------------");
 
-        return nominacompleta.toString();
+        return sueldosCompletos.toString();
+    }
+
+    private int encontrarApellido(String apellido) {
+        int index= -1;
+        for (int i = 0; i < getSeleccionado().size(); i++) {
+            if (getSeleccionado().get(i).getApellido().contains(apellido)) {
+                index= i;
+            }
+        }
+        return index;
+    }
+    
+    public String conocerRol(String pApellido) {
+        int indiceDeJugador= encontrarApellido(pApellido); 
+        if (indiceDeJugador == -1) {
+            return "El nombre ingresado no pertenece a un integrante de la selección.";
+        }else{
+            IntegranteSeleccion integrante= getSeleccionado().get(indiceDeJugador);
+            // “Integrante: Apellido, Nombre - Rol que cumple: rol.”
+            return "Integrante: " + integrante.getApellido() + ", " + 
+            integrante.getNombre() + " - Rol que cumple: " + integrante.rolEntrenamiento() + ".";
+        }
+    }
+
+    public String mostrarNomina() {
+        StringBuilder nominaCompleta= new StringBuilder();
+
+        nominaCompleta.append("Asociación de Futbol Argentina - AFA\r\n" + //
+                "Presidente: Tapia, Claudio\r\n" + //
+                "Integrantes del Seleccionado Argentino de Futbol:\r\n" + //
+                "-------------------------------------------------------------------\r\n");
+
+        for (int i = 0; i < getSeleccionado().size(); i++) {
+            nominaCompleta.append(getSeleccionado().get(i).mostrarDatos() + "\r\n");
+        }
+
+        nominaCompleta.append("-------------------------------------------------------------------");
+
+        return nominaCompleta.toString();
     }
 }

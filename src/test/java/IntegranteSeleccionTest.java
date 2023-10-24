@@ -22,8 +22,8 @@ public class IntegranteSeleccionTest {
 
     @Test
     public void sueldoMasajistaTest() {
-        Masajista masajista= new Masajista("Luciano", "Torreon", 2, 50000);
+        Masajista masajista= new Masajista("Luciano", "Torreon", 4, 50000);
 
-        assertEquals((int)((50000*0.925)+(2*5000)), (int)masajista.sueldoNeto());
+        assertEquals((int)((50000*0.925)+(4*5000)), (int)masajista.sueldoNeto());
     }
 }

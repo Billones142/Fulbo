@@ -25,17 +25,18 @@ public class Entrenador
 
     /*********************Fin De Encapsulacion*********************/
 
+    @Override
     public double sueldoNeto(){
-        return aportes() + adicionalHijos();
+        return aportes() + adicionalHijos() + (getNacionalidad().contains("Argentina")?10000:0);
     }
 
-
-    
-    public String mostrarDatos(){ //TODO
-        return "";
+    public String rolEntrenamiento(){
+        return "dirigir";
     }
 
-    public String rolEntrenamiento(){ //TODO
-        return "";
+    @Override
+    public String mostrarDatos(){
+        return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
+        " - Entrenador - Nacinalidad: " + getNacionalidad() + "\r\n";
     }
 }

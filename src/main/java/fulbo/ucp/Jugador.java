@@ -34,14 +34,16 @@ public class Jugador extends IntegranteSeleccion{
     }
     /**********************Fin encapsulacion**********************/
     
-    public String rolEntrenamiento() { //TODO
-        return "";
+    public String rolEntrenamiento() {
+        return "jugar";
     }
 
+    @Override
     public double sueldoNeto() {
         return aportes() + (getPremio()?getSueldoBasico()*0.3:0) + adicionalHijos();
     }
 
+    @Override
     public String mostrarDatos() {
         return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
         " - Jugador - " + getPosicionTactica() + (getPremio()?" (Premio habilitado)":"") + "\r\n";

@@ -12,8 +12,8 @@ public class Masajista extends IntegranteSeleccion{
     String titulacion;
 
     /********************Comienzo encapsulacion********************/
-    public void setTitulacion(String nacionalidad) {
-        this.titulacion = nacionalidad;
+    public void setTitulacion(String titulo) {
+        this.titulacion = titulo;
     }
 
     public String getTitulacion() {
@@ -21,11 +21,12 @@ public class Masajista extends IntegranteSeleccion{
     }
     /**********************Fin encapsulacion**********************/
 
-    public String rolEntrenamiento() { //TODO
-        return "";
+    public String rolEntrenamiento() {
+        return "asistir en salud";
     }
 
-    public String mostrarDatos() { //TODO
-        return "";
+    public String mostrarDatos() {
+        return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
+        " - Masajista - Titulación: " + getTitulacion() + "\r\n";
     }
 }
