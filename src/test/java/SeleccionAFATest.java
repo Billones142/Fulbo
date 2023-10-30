@@ -18,10 +18,10 @@ public class SeleccionAFATest {
         String nomina= "--------------------------------------------------------------------------------------\r\n" + //
                 "Resumen de sueldos a pagar:\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Messi, Lionel - Sueldo Básico: $200000.0 - Hijos: 3 - Jugador - Delantero (Premio habilitado)\r\n" + //
-                "Sueldo Neto: $260000.0\r\n" + //
+                "Messi, Lionel - Sueldo Básico: $200.000,00 - Hijos: 3 - Jugador - Delantero (Premio habilitado)\r\n" + //
+                "Sueldo Neto: $260.000,00\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Monto total a pagar en concepto de sueldos: $ 260000.0\r\n" + //
+                "Monto total a pagar en concepto de sueldos: $ 260.000,00\r\n" + //
                 "--------------------------------------------------------------------------------------";
 
         String nominaCreada= seleccionAFA.liquidarSueldos();
@@ -50,7 +50,7 @@ public class SeleccionAFATest {
     }
 
     @Test
-    public void liquidarSueldos_EntrenadorTest() {// TODO
+    public void liquidarSueldos_EntrenadorTest() {
         SeleccionAFA seleccionAFA= new SeleccionAFA("Scaloni");
         Entrenador scaloni= new Entrenador("Lionel Sebastián", "Scaloni", 2, 150000, "Argentina");
 
@@ -71,7 +71,7 @@ public class SeleccionAFATest {
     }
 
     @Test
-    public void liquidarSueldos_oMasajistaTest() {// TODO
+    public void liquidarSueldos_oMasajistaTest() {
         SeleccionAFA seleccionAFA= new SeleccionAFA("Escaloni");
         Masajista masajista= new Masajista("Roberto" ,"Rodriguez", 50000);
         masajista.setTitulacion("Fisioterapeuta");
@@ -93,7 +93,7 @@ public class SeleccionAFATest {
     }
 
     @Test
-    public void liquidarSueldos_FinalTest() {// TODO
+    public void liquidarSueldos_FinalTest() {
         SeleccionAFA seleccionAFA= new SeleccionAFA("Scaloni");
 
         Entrenador scaloni= new Entrenador("Lionel Sebastián", "Scaloni", 2, 150000, "Argentina");

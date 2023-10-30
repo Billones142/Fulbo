@@ -55,12 +55,12 @@ public class SeleccionAFA {
 
             sueldosCompletos.append(integrante.mostrarDatos());
 
-            sueldosCompletos.append("Sueldo Neto: $" + integrante.sueldoNeto() + "\r\n");
+            sueldosCompletos.append("Sueldo Neto: $" + Format.format(integrante.sueldoNeto()) + "\r\n");
             montoTotal+= integrante.sueldoNeto();
         }
 
         sueldosCompletos.append("--------------------------------------------------------------------------------------\r\n" +
-                            "Monto total a pagar en concepto de sueldos: $ " + montoTotal + "\r\n" +
+                            "Monto total a pagar en concepto de sueldos: $ " + Format.format(montoTotal) + "\r\n" +
                             "--------------------------------------------------------------------------------------");
 
         return sueldosCompletos.toString();

@@ -1,5 +1,7 @@
 package fulbo.ucp;
 
+import java.text.DecimalFormat;
+
 abstract class IntegranteSeleccion {
     public IntegranteSeleccion(String pNom, String pApe, int pH, double pSB) {
         super();
@@ -75,6 +77,11 @@ abstract class IntegranteSeleccion {
     }
 
     public String mostrarDatos(){
-        return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"");
+        return apeYnom() + " - Sueldo Básico: $" + format(getSueldoBasico()) + (getHijos() > 0?" - Hijos: " + getHijos():"");
+    }
+
+    public String format(Double val) {
+        DecimalFormat decimalFormat = new DecimalFormat("###,###.00");
+        return decimalFormat.format(val);
     }
 }

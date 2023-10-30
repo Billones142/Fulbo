@@ -45,7 +45,7 @@ public class Jugador extends IntegranteSeleccion{
 
     @Override
     public String mostrarDatos() {
-        return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
+        return apeYnom() + " - Sueldo Básico: $" + Format.format(getSueldoBasico()) + (getHijos() > 0?" - Hijos: " + getHijos():"")+
         " - Jugador - " + getPosicionTactica() + (getPremio()?" (Premio habilitado)":"") + "\r\n";
     }
 }
