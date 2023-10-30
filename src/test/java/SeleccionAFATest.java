@@ -32,13 +32,13 @@ public class SeleccionAFATest {
     @Test
     public void sueldoJugadorSinPremioTest() {
         SeleccionAFA seleccionAFA= new SeleccionAFA("Escaloni");
-        Jugador dybala= new Jugador("Paulo", "Dybala", 120000, "Delantero", false);
+        Jugador dybala= new Jugador("Paulo", "Dybala", 80000, "Delantero", false);
         seleccionAFA.agregarIntegrante(dybala);
 
         String nomina= "--------------------------------------------------------------------------------------\r\n" + //
                 "Resumen de sueldos a pagar:\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Dybala, Paulo - Sueldo Básico: $120000.0 - Jugador - Delantero\r\n" + //
+                "Dybala, Paulo - Sueldo Básico: $80000.0 - Jugador - Delantero\r\n" + //
                 "Sueldo Neto: $74000.0\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
                 "Monto total a pagar en concepto de sueldos: $ 74000.0\r\n" + //
@@ -51,18 +51,18 @@ public class SeleccionAFATest {
 
     @Test
     public void sueldoEntrenadorTest() {// TODO
-        SeleccionAFA seleccionAFA= new SeleccionAFA("Escaloni");
-        Entrenador escaloni= new Entrenador("Lionel Sebastián", "Escaloni", 2, "Argentina");
+        SeleccionAFA seleccionAFA= new SeleccionAFA("Scaloni");
+        Entrenador escaloni= new Entrenador("Lionel Sebastián", "Scaloni", 2, 150000, "Argentina");
 
         seleccionAFA.agregarIntegrante(escaloni);
 
         String nomina= "--------------------------------------------------------------------------------------\r\n" + //
                 "Resumen de sueldos a pagar:\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Dybala, Paulo - Sueldo Básico: $120000.0 - Jugador - Delantero\r\n" + //
-                "Sueldo Neto: $74000.0\r\n" + //
+                "Scaloni, Lionel Sebastián - Sueldo Básico: $150000.0 - Hijos: 2 - Entrenador - Nacionalidad: Argentina\r\n" + //
+                "Sueldo Neto: $148750.0\r\n" +
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Monto total a pagar en concepto de sueldos: $ 74000.0\r\n" + //
+                "Monto total a pagar en concepto de sueldos: $ 148750.0\r\n" + //
                 "--------------------------------------------------------------------------------------";
 
         String nominaCreada= seleccionAFA.liquidarSueldos();
@@ -73,7 +73,7 @@ public class SeleccionAFATest {
     @Test
     public void sueldoMasajistaTest() {// TODO
         SeleccionAFA seleccionAFA= new SeleccionAFA("Escaloni");
-        Masajista masajista= new Masajista("Roberto" ,"Rodriguez", 1, 50000);
+        Masajista masajista= new Masajista("Roberto" ,"Rodriguez", 50000);
         masajista.setTitulacion("Fisioterapeuta");
 
         seleccionAFA.agregarIntegrante(masajista);
@@ -81,10 +81,10 @@ public class SeleccionAFATest {
         String nomina= "--------------------------------------------------------------------------------------\r\n" + //
                 "Resumen de sueldos a pagar:\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Dybala, Paulo - Sueldo Básico: $120000.0 - Jugador - Delantero\r\n" + //
-                "Sueldo Neto: $74000.0\r\n" + //
+                "Rodriguez, Roberto - Sueldo Básico: $50000.0 - Masajista - Titulación: Fisioterapeuta\r\n" + //
+                "Sueldo Neto: $46250.0\r\n" + //
                 "--------------------------------------------------------------------------------------\r\n" + //
-                "Monto total a pagar en concepto de sueldos: $ 74000.0\r\n" + //
+                "Monto total a pagar en concepto de sueldos: $ 46250.0\r\n" + //
                 "--------------------------------------------------------------------------------------";
 
         String nominaCreada= seleccionAFA.liquidarSueldos();

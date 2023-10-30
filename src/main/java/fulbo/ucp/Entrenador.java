@@ -27,7 +27,7 @@ public class Entrenador
 
     @Override
     public double sueldoNeto(){
-        return aportes() + adicionalHijos() + (getNacionalidad().contains("Argentina")?10000:0);
+        return aportes() + adicionalHijos() + (!getNacionalidad().contains("Argentina")?10000:0);
     }
 
     public String rolEntrenamiento(){
@@ -37,6 +37,6 @@ public class Entrenador
     @Override
     public String mostrarDatos(){
         return apeYnom() + " - Sueldo Básico: $" + getSueldoBasico() + (getHijos() > 0?" - Hijos: " + getHijos():"")+
-        " - Entrenador - Nacinalidad: " + getNacionalidad() + "\r\n";
+        " - Entrenador - Nacionalidad: " + getNacionalidad() + "\r\n";
     }
 }
