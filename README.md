@@ -1,7 +1,10 @@
 # TP2-GestorEmails
 Alumno: Stefano Merino De Rui
 
-Materia: 
+Materias: 
+- Paradigmas y lengujes de programacion
+- Sistemas operativos
+
 
 
 ## Test
